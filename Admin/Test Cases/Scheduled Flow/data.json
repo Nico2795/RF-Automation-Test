@@ -1,0 +1,147 @@
+{
+	"name": "Ruta Calendarizada Robot ",
+	"description": "Ruta Calendarizada Robot",
+	"communities": ["${idComunidad}"],
+	"superCommunities": ["${idSuperCommunity}"],
+	"ownerIds": [
+		{
+			"id": "${idComunidad}",
+			"role": "community"
+		}
+	],
+	"shapeId": "65ef21aa6f1c17c2eeeb5f98",
+	"usesBusCode": false,
+	"usesVehicleList": true,
+	"usesDriverCode": false,
+	"allowsOnlyExistingDrivers": false,
+	"allowsMultipleDrivers": false,
+	"dynamicSeatAssignment": true,
+	"usesTickets": false,
+	"startsOnStop": false,
+	"notNearStop": false,
+	"routeCost": 0,
+	"ticketCost": 0,
+	"excludePassengers": {
+		"active": false,
+		"excludeType": "dontHide"
+	},
+	"restrictPassengers": {
+		"enabled": false,
+		"allowed": [],
+		"visibility": {
+			"enabled": false,
+			"excludes": false,
+			"parameters": []
+		}
+	},
+	"endDepartureNotice": {
+		"enabled": false,
+		"lastStop": null
+	},
+	"scheduling": {
+		"enabled": true,
+		"limitUnit": "minutes",
+		"limitAmount": 30,
+		"lateNotification": {
+			"enabled": false,
+			"amount": 0,
+			"unit": "minutes"
+		},
+		"stopNotification": {
+			"enabled": false,
+			"amount": 0,
+			"unit": "minutes"
+		},
+		"startLimit": {
+			"upperLimit": {
+				"amount": 60,
+				"unit": "minutes"
+			},
+			"lowerLimit": {
+				"amount": 30,
+				"unit": "minutes"
+			}
+		},
+		"schedule": [
+			{
+				"enabled": true,
+				"day": "tue",
+				"time": "19:00",
+				"estimatedArrival": null,
+				"stopSchedule": [],
+				"capped": {
+					"enabled": false,
+					"capacity": 0
+				},
+				"vehicleCategoryId": null,
+				"defaultResources": []
+			}
+		],
+		"stopOnReservation": true,
+		"restrictions": {
+			"customParams": {
+				"enabled": false,
+				"params": []
+			}
+		}
+	},
+	"customParams": {
+		"enabled": false,
+		"params": []
+	},
+	"customParamsAtTheEnd": {
+		"enabled": false,
+		"params": []
+	},
+	"validationParams": {
+		"enabled": false,
+		"driverParams": [],
+		"passengerParams": []
+	},
+	"allowsServiceSnapshots": false,
+	"allowsNonServiceSnapshots": false,
+	"labels": [],
+	"roundOrder": [
+		{
+			"stopId": "655d11d88a5a1a1ff0328466",
+			"notifyIfPassed": false
+		},
+		{
+			"stopId": "655d11d88a5a1a1ff0328464",
+			"notifyIfPassed": false
+		}
+	],
+	"anchorStops": ["655d11d88a5a1a1ff0328466", "655d11d88a5a1a1ff0328464"],
+	"originStop": "655d11d88a5a1a1ff0328466",
+	"destinationStop": "655d11d88a5a1a1ff0328464",
+	"hasBeacons": true,
+	"hasCapacity": true,
+	"isStatic": false,
+	"showParable": false,
+	"extraInfo": "",
+	"color": "9c6161",
+	"usesManualSeat": true,
+	"allowsManualValidation": true,
+	"usesDriverPin": false,
+	"hasBoardings": true,
+	"hasUnboardings": true,
+	"allowsDistance": false,
+	"allowGenericVehicles": true,
+	"hasExternalGPS": false,
+	"departureHourFulfillment": {
+		"enabled": false,
+		"ranges": []
+	},
+	"usesOfflineCount": true,
+	"visible": true,
+	"active": true,
+	"usesTextToSpeech": false,
+	"hasBoardingCount": false,
+	"hasRounds": false,
+	"hasUnboardingCount": false,
+	"timeOnRoute": 11,
+	"distance": 4,
+	"distanceInMeters": 3840,
+	"legOptions": [],
+	"route_type": 3
+}

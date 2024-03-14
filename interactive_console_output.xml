@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.10.12 on win32)" generated="20240310 20:15:27.174" rpa="false" schemaversion="4">
+<suite id="s1" name="Robot Interactive Console" source="c:\Users\nico2\.vscode\extensions\robocorp.robotframework-lsp-1.11.0\src\robotframework_ls\vendored\robotframework_interactive\robot_interactive_console.robot">
+<test id="s1-t1" name="Default Task/Test" line="5">
+<kw name="Interpreter Main Loop" library="MainLoop">
+<kw name="Set Variable" library="BuiltIn">
+<var>${url}</var>
+<arg>${STAGE_URL}/api/v1/admin/pb/allServices?community=653fd601f90509541a748683&amp;startDate=2024-03-08T03:00:00.000Z&amp;endDate=2024-03-09T02:59:59.999Z&amp;onlyODDs=false</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240310 20:15:27.900" level="FAIL">Variable '${STAGE_URL}' not found.</msg>
+<status status="FAIL" starttime="20240310 20:15:27.899" endtime="20240310 20:15:27.900"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>&amp;{headers}</var>
+<arg>Authorization=${tokenAdmin}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" starttime="20240310 20:15:27.901" endtime="20240310 20:15:27.901"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>&amp;{options}</var>
+<arg>headers=${headers}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" starttime="20240310 20:15:27.901" endtime="20240310 20:15:27.901"/>
+</kw>
+<kw name="GET">
+<var>${response}</var>
+<arg>url=${url}</arg>
+<arg>headers=${headers}</arg>
+<status status="NOT RUN" starttime="20240310 20:15:27.902" endtime="20240310 20:15:27.902"/>
+</kw>
+<kw name="Should Be Equal As Numbers" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="NOT RUN" starttime="20240310 20:15:27.902" endtime="20240310 20:15:27.902"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Response Content: ${response.text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20240310 20:15:27.903" endtime="20240310 20:15:27.903"/>
+</kw>
+<status status="PASS" starttime="20240310 20:15:27.220" endtime="20240310 20:15:46.359"/>
+</kw>
+<status status="PASS" starttime="20240310 20:15:27.220" endtime="20240310 20:15:46.359"/>
+</test>
+<status status="PASS" starttime="20240310 20:15:27.176" endtime="20240310 20:15:46.360"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Robot Interactive Console">Robot Interactive Console</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
