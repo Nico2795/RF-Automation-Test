@@ -26,4 +26,4 @@ jobs:
 
       - name: Run Robot Framework tests
         run: |
-          robot path/to/your/tests
+          robot Admin/Test Cases/Scheduled Flow/createScheduled.robot
