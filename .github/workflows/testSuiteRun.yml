@@ -27,4 +27,4 @@ jobs:
 
       - name: Run Robot Framework tests
         run: |
-          robot RF-Automation-Test/Admin/Test Cases/Scheduled Flow/createScheduled.robot
+          Admin/Test Cases/Scheduled Flow/createScheduled.robot
