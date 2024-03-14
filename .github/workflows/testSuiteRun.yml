@@ -14,15 +14,16 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Setup Python
+      - name: Setup Python and pip
         uses: actions/setup-python@v2
         with:
           python-version: 3.8
+          pip-version: latest  # Esto asegurará que pip se actualice a la última versión
 
       - name: Install dependencies
         run: |
           pip install robotframework
-          pip install -r requirements.txt
+          # Aquí puedes instalar otras dependencias necesarias para tus pruebas
 
       - name: Run Robot Framework tests
         run: |
