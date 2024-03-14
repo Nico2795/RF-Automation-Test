@@ -23,7 +23,10 @@ jobs:
       - name: Install dependencies
         run: |
           pip install robotframework
-          # Aquí puedes instalar otras dependencias necesarias para tus pruebas
+          pip install robotframework-requests  # Instala RequestsLibrary
+          pip install robotframework-seleniumlibrary  # Instala SeleniumLibrary
+          pip install rpaframework  # Instala RPA.JSON
+          # Instala otras dependencias necesarias para tus pruebas
 
       - name: Run Robot Framework tests
         run: |
