@@ -31,3 +31,12 @@ jobs:
       - name: Run Robot Framework tests
         run: |
           robot Admin/Test\ Cases/Scheduled\ Flow/createScheduled.robot
+
+      - name: Upload Test Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: robot-framework-reports
+          path: |
+            /home/runner/work/RF-Automation-Test/RF-Automation-Test/output.xml
+            /home/runner/work/RF-Automation-Test/RF-Automation-Test/log.html
+            /home/runner/work/RF-Automation-Test/RF-Automation-Test/report.html
