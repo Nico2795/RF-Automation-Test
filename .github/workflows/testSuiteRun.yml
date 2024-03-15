@@ -39,3 +39,10 @@ jobs:
             /home/runner/work/RF-Automation-Test/RF-Automation-Test/output.xml
             /home/runner/work/RF-Automation-Test/RF-Automation-Test/log.html
             /home/runner/work/RF-Automation-Test/RF-Automation-Test/report.html
+
+      - name: Upload log.html to Google Drive
+        uses: google-github-actions/upload-to-google-drive@v1
+        with:
+          file: /home/runner/work/RF-Automation-Test/RF-Automation-Test/log.html
+          folder: <1s56E_tbYyVgQ7xK1hOLC_1ftjFp8RpMt>
+          token: ${{ secrets.GOOGLE_DRIVE_TOKEN }}
