@@ -517,25 +517,6 @@ Get Passenger List
 
     Log    ${response.content}
 
-Emergency Call
-    Create Session    mysesion    ${STAGE_URL}    verify=true
-
-    # Define la URL del recurso que requiere autenticación (puedes ajustarla según tus necesidades)
-
-    # Configura las opciones de la solicitud (headers, auth)
-    ${headers}=    Create Dictionary
-    ...    Authorization=${departureToken}
-    ...    Content-Type=application/json
-    # Realiza la solicitud GET en la sesión por defecto
-    ${response}=    POST On Session
-    ...    mysesion
-    ...    url=/api/v2/pb/driver/emergency
-    ...    data={"latitude":"-72.6071614","longitude":"-38.7651863"}
-    ...    headers=${headers}
-    # Verifica el código de estado esperado (puedes ajustarlo según tus expectativas)
-    ${code}=    convert to string    ${response.status_code}
-    Status Should Be    200
-    Log    ${code}
 
 Stop Departure With Post Leg
     Create Session    mysesion    ${STAGE_URL}    verify=true
