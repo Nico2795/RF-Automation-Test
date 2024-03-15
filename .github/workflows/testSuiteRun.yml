@@ -1,9 +1,8 @@
 name: Run Robot Framework Tests
 
 on:
-  push:
-    branches:
-      - main
+  repository_dispatch:
+    types: [trigger-workflow]
 
 jobs:
   run_tests:
