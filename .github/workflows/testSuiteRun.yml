@@ -45,4 +45,4 @@ jobs:
         with:
           credentials: ${{ secrets.GOOGLE_DRIVE_TOKEN }}
           filename: "log.html"
-          folderId: "<your-folder-id>"
+          folderId: 1s56E_tbYyVgQ7xK1hOLC_1ftjFp8RpMt
