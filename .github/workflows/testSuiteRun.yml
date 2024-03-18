@@ -45,4 +45,4 @@ jobs:
         with:
           target: ${{ github.workspace }}/log.html
           credentials: ${{ secrets.GOOGLE_DRIVE_TOKEN }}
-          parent_folder_id: 1s56E_tbYyVgQ7xK1hOLC_1ftjFp8RpMt
+          parent_folder_id: <1s56E_tbYyVgQ7xK1hOLC_1ftjFp8RpMt>
