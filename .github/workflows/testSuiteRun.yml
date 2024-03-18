@@ -17,15 +17,15 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: 3.8
-          pip-version: latest
+          pip-version: latest  # Esto asegurará que pip se actualice a la última versión
 
       - name: Install dependencies
         run: |
           pip install robotframework
-          pip install robotframework-requests
-          pip install robotframework-seleniumlibrary
-          pip install rpaframework
-          # Install other necessary dependencies for your tests
+          pip install robotframework-requests  # Instala RequestsLibrary
+          pip install robotframework-seleniumlibrary  # Instala SeleniumLibrary
+          pip install rpaframework  # Instala RPA.JSON
+          # Instala otras dependencias necesarias para tus pruebas
 
       - name: Run Robot Framework tests
         run: |
@@ -41,8 +41,8 @@ jobs:
             /home/runner/work/RF-Automation-Test/RF-Automation-Test/report.html
 
       - name: Upload log.html to Google Drive
-        uses: adityak74/google-drive-upload-git-action@main
+        uses: willo32/google-drive-upload-action@v1
         with:
+          target: ${{ github.workspace }}/log.html
           credentials: ${{ secrets.GOOGLE_DRIVE_TOKEN }}
-          filename: "log.html"
-          folderId: 1s56E_tbYyVgQ7xK1hOLC_1ftjFp8RpMt
+          parent_folder_id: 1s56E_tbYyVgQ7xK1hOLC_1ftjFp8RpMt
