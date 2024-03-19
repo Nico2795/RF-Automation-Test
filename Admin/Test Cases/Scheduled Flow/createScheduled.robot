@@ -21,7 +21,7 @@ ${vehicleCode}          1111
 ${addStopOrder}         /api/v1/admin/pb/stop-time?community=${idComunidad}
 ${seatReservation}      /api/v1/pb/user/booking
 ${idNico}               65e8e076337a90a35ba6e8dd
-${tokenAdmin}           Bearer cb91fc010de72bf97bce8da804b7b1ed896bf0bf12e54034d570937eea068ed2e988a32cfd47af4ccb36bfe97a7d7166b39c72a1a792cb0b8d059b470c9d51cc
+${tokenAdmin}           ${{ secrets.TOKENADMIN }}
 ${tokenNico}            Bearer f6acc8b4f90980beacb67d0ac926a3fc32ba4c9630aee848a671bc3b2a16d01b1d2b7e285bcce74465cca7c01fd553456fb44b69a9520c456e7025dd53e9ec1e
 ${tokenPedroPascal}     Bearer 2eacdb42a68ffa12b3d9901816b6b6049b1a65c9232c2112a64c5935002683b35bbf10c046ef9670f529241849999f66c4645956ecb1b0ae2a1de5c3209f9f4b
 ${tokenKratos}          Bearer fda5651771446906c9a511a066e26b4ef28873fa97ce094f47a2402b4a9a6f652a0032e1a7d3607515d2a873f2bb1eb73033e06c8d1d78e28b725a0537807d6f
