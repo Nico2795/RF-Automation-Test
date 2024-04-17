@@ -39,15 +39,18 @@ jobs:
             /home/runner/work/RF-Automation-Test/RF-Automation-Test/log.html
             /home/runner/work/RF-Automation-Test/RF-Automation-Test/report.html
 
-      - name: Send log.html via email
-        uses: dawidd6/action-send-mail@v2
+      - name: Send Email
+        uses: hilarion5/send-mail@v1
         with:
-          server_address: smtp.example.com
-          server_port: 587
-          username: ${{ secrets.EMAIL_USERNAME }}
-          password: ${{ secrets.EMAIL_PASSWORD }}
-          subject: Log File
+          smtp-server: smtp.gmail.com
+          smtp-port: 465
+          smtp-secure: true
+          from-email: nico.bustamantesolis@gmail.com
+          to-email: nico2795@gmail.com
+          username: ${{ secrets.GMAIL_USERNAME }}
+          password: ${{ secrets.GMAIL_PASSWORD }}
+          subject: Test Email
           body: Attached is the log file.
-          to: nico2795@gmail.com
-          from: nico.bustamantesolis@gmail.com
-          attachments: /home/runner/work/RF-Automation-Test/RF-Automation-Test/log.html
+          html: |
+            <h1>Test Email</h1>
+            <p>This is a test email sent from GitHub Actions.</p> 
