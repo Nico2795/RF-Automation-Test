@@ -47,8 +47,8 @@ jobs:
           smtp-secure: true
           from-email: nico.bustamantesolis@gmail.com
           to-email: nico2795@gmail.com
-          username: ${{ secrets.GMAIL_USERNAME }}
-          password: ${{ secrets.GMAIL_PASSWORD }}
+          username: ${{ secrets.EMAIL_USERNAME }}
+          password: ${{ secrets.EMAIL_PASSWORD }}
           subject: Test Email
           body: Attached is the log file.
           html: |
