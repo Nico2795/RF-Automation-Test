@@ -17,15 +17,14 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: 3.8
-          pip-version: latest  # Esto asegurará que pip se actualice a la última versión
+          pip-version: latest
 
       - name: Install dependencies
         run: |
           pip install robotframework
-          pip install robotframework-requests  # Instala RequestsLibrary
-          pip install robotframework-seleniumlibrary  # Instala SeleniumLibrary
-          pip install rpaframework  # Instala RPA.JSON
-          # Instala otras dependencias necesarias para tus pruebas
+          pip install robotframework-requests
+          pip install robotframework-seleniumlibrary
+          pip install rpaframework
 
       - name: Run Robot Framework tests
         run: |
@@ -40,9 +39,15 @@ jobs:
             /home/runner/work/RF-Automation-Test/RF-Automation-Test/log.html
             /home/runner/work/RF-Automation-Test/RF-Automation-Test/report.html
 
-      - name: Upload log.html to Google Drive
-        uses: willo32/google-drive-upload-action@v1
+      - name: Send log.html via email
+        uses: dawidd6/action-send-mail@v2
         with:
-          target: ${{ github.workspace }}/log.html
-          credentials: ${{ secrets.GOOGLE_DRIVE_TOKEN }}
-          parent_folder_id: "1s56E_tbYyVgQ7xK1hOLC_1ftjFp8RpMt"
+          server_address: smtp.example.com
+          server_port: 587
+          username: ${{ secrets.EMAIL_USERNAME }}
+          password: ${{ secrets.EMAIL_PASSWORD }}
+          subject: Log File
+          body: Attached is the log file.
+          to: nico2795@gmail.com
+          from: nico.bustamantesolis@gmail.com
+          attachments: /home/runner/work/RF-Automation-Test/RF-Automation-Test/log.html
