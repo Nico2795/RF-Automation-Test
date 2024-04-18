@@ -30,14 +30,15 @@ jobs:
         run: |
           robot Admin/Test\ Cases/Scheduled\ Flow/createScheduled.robot
 
-      - name: Upload Log File
-        uses: actions/upload-artifact@v2
+      - name: Download log file artifact
+        uses: actions/download-artifact@v2
         with:
           name: log-file
-          path: /home/runner/work/RF-Automation-Test/RF-Automation-Test/log.html
+          path: /home/runner/work/RF-Automation-Test/RF-Automation-Test
+
+      - name: Unzip log file
+        run: unzip -o /home/runner/work/RF-Automation-Test/RF-Automation-Test/log-file.zip -d /home/runner/work/RF-Automation-Test/RF-Automation-Test
 
       - name: Move log.html to Reports folder
         run: |
-          mv /home/runner/work/RF-Automation-Test/RF-Automation-Test/log.html Admin/Test\ Cases/Reports/
-
-
+          mv /home/runner/work/RF-Automation-Test/RF-Automation-Test/log.html /home/runner/work/RF-Automation-Test/RF-Automation-Test/Admin/Test\ Cases/Reports/
