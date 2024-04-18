@@ -38,6 +38,6 @@ jobs:
 
       - name: Move log.html to Reports folder
         run: |
-          mv /home/runner/work/RF-Automation-Test/RF-Automation-Test/log.html /home/runner/work/RF-Automation-Test/RF-Automation-Test/Admin/Test\ Cases/Reports/
+          mv /home/runner/work/RF-Automation-Test/RF-Automation-Test/log.html Admin/Test\ Cases/Reports/
 
 
