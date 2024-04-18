@@ -30,19 +30,7 @@ jobs:
         run: |
           robot Admin/Test\ Cases/Scheduled\ Flow/createScheduled.robot
 
-      - name: Upload Log File
-        id: upload-log-file
-        uses: actions/upload-artifact@v2
-        with:
-          name: log-file
-          path: /home/runner/work/RF-Automation-Test/RF-Automation-Test/log.html
-
-      - name: Get artifact path
-        id: get-artifact-path
-        run: echo "::set-output name=artifact-path::$(find ${{ github.workspace }} -name 'log.html' -print -quit)"
-
       - name: Move log.html to Reports folder
         run: |
           mkdir -p Admin/Test\ Cases/Reports/
-          mv "${{ steps.get-artifact-path.outputs.artifact-path }}" /home/runner/work/RF-Automation-Test/RF-Automation-Test/Admin/Test\ Cases/Reports/
-
+          mv log.html Admin/Test\ Cases/Reports/
