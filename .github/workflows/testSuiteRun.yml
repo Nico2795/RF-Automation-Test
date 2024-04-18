@@ -48,11 +48,5 @@ jobs:
           to-email: nico2795@gmail.com
           markdown-body: |
             Hey, check out this file
-          attachments: |
-            /home/runner/work/RF-Automation-Test/RF-Automation-Test/log.html
-            /home/runner/work/RF-Automation-Test/RF-Automation-Test/output.xml
-            /home/runner/work/RF-Automation-Test/RF-Automation-Test/report.html
-          attachments-disposition: |
-            attachment
-            attachment
-            attachment
+          attachments: /home/runner/work/RF-Automation-Test/RF-Automation-Test/log.html
+          attachments-disposition: attachment
