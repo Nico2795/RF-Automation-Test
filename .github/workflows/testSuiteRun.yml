@@ -43,4 +43,4 @@ jobs:
           path: downloaded-log-file
 
       - name: Move Log File to Reports Folder
-        run: mv downloaded-log-file/log.html Admin/Test\ Cases/Reports/
+        run: mv downloaded-log-file/* Admin/Test\ Cases/Reports/
