@@ -36,12 +36,6 @@ jobs:
           name: log-file
           path: /home/runner/work/RF-Automation-Test/RF-Automation-Test/log.html
 
-      - name: Download log file artifact
-        uses: actions/download-artifact@v2
-        with:
-          name: log-file
-          path: /home/runner/work/RF-Automation-Test/RF-Automation-Test/log.html
-
       - name: Unzip log file
         run: unzip -o /home/runner/work/RF-Automation-Test/RF-Automation-Test/log-file.zip -d /home/runner/work/RF-Automation-Test/RF-Automation-Test
 
