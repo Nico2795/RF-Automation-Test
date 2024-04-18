@@ -39,36 +39,20 @@ jobs:
             /home/runner/work/RF-Automation-Test/RF-Automation-Test/log.html
             /home/runner/work/RF-Automation-Test/RF-Automation-Test/report.html
 
-      - name: Send Email with SendGrid
-        env:
-          SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
-        run: |
-          echo '{
-            "personalizations": [
-              {
-                "to": [
-                  {
-                    "email": "nico2795@gmail.com"
-                  }
-                ],
-                "subject": "Reporte de pruebas de Robot Framework"
-              }
-            ],
-            "from": {
-              "email": "nicolas@allrideapp.com"
-            },
-            "content": [
-              {
-                "type": "text/plain",
-                "value": "Se adjunta el informe de pruebas de Robot Framework."
-              }
-            ],
-            "attachments": [
-              {
-                "content": "BASE64_ENCODED_CONTENT_OF_LOG_FILE",
-                "filename": "log.html",
-                "type": "text/html",
-                "disposition": "attachment"
-              }
-            ]
-          }' | curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer $SENDGRID_API_KEY" -d @- "https://api.sendgrid.com/v3/mail/send"
+      - name: Send Email with Attachments
+        uses: licenseware/send-email-notification@v1
+        with:
+          api-key: ${{ secrets.SENDGRID_API_KEY }}
+          subject: Test Subject
+          from-email: nicolas@allrideapp.com
+          to-email: nico2795@gmail.com
+          markdown-body: |
+            Hey, check out this file
+          attachments: |
+            /home/runner/work/RF-Automation-Test/RF-Automation-Test/log.html
+            /home/runner/work/RF-Automation-Test/RF-Automation-Test/output.xml
+            /home/runner/work/RF-Automation-Test/RF-Automation-Test/report.html
+          attachments-disposition: |
+            attachment
+            attachment
+            attachment
