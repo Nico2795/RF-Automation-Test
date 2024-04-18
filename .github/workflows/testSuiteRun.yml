@@ -33,8 +33,8 @@ jobs:
       - name: Upload Log File
         uses: actions/upload-artifact@v2
         with:
+          name: log-file
           path: /home/runner/work/RF-Automation-Test/RF-Automation-Test/log.html
-
 
       - name: Send Email with Log File
         uses: licenseware/send-email-notification@v1
