@@ -30,36 +30,23 @@ jobs:
         run: |
           robot Admin/Test\ Cases/Scheduled\ Flow/createScheduled.robot
 
-      - name: Upload Log File
-        id: upload-log-file
+      - name: Upload Log File Artifact
         uses: actions/upload-artifact@v2
         with:
           name: log-file
           path: /home/runner/work/RF-Automation-Test/RF-Automation-Test/log.html
 
-      - name: Upload Log File to GitHub
-        uses: actions/github-script@v5
-        with:
-          github-token: ${{ secrets.TOKEN_GITHUB }}
-          script: |
-            const fs = require('fs');
-            const path = require('path');
-      
-            // Ruta del archivo log.html
-            const filePath = '/home/runner/work/RF-Automation-Test/RF-Automation-Test/log.html';
-      
-            // Lee el contenido del archivo
-            const fileContent = fs.readFileSync(filePath, 'utf8');
-      
-            // Nombre de la carpeta en tu repositorio de GitHub
-            const folderName = 'Admin/Test Cases/Reports';
-      
-            // Ruta de destino en tu repositorio
-            const destinationPath = path.join(folderName, 'log.html');
-      
-            // Crea la carpeta si no existe
-            fs.mkdirSync(path.dirname(destinationPath), { recursive: true });
-      
-            // Escribe el archivo en la carpeta destino
-            fs.writeFileSync(destinationPath, fileContent);
+      - name: Move Log File to Reports Folder
+        run: |
+          # Obtener la ruta del artifact generado
+          artifact_path=$(curl -s https://api.github.com/repos/Nico2795/RF-Automation-Test/actions/runs/$GITHUB_RUN_ID/artifacts | jq -r '.artifacts[0].archive_download_url')
 
+          # Descargar el artifact
+          wget -qO artifact.zip $artifact_path
+
+          # Extraer el archivo log.html del artifact
+          unzip -q artifact.zip
+
+          # Mover log.html a la carpeta deseada
+          mkdir -p Admin/Test\ Cases/Reports
+          mv log.html Admin/Test\ Cases/Reports/
