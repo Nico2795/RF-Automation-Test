@@ -30,16 +30,7 @@ jobs:
         run: |
           robot Admin/Test\ Cases/Scheduled\ Flow/createScheduled.robot
 
-      - name: Upload Test Artifacts
-        uses: actions/upload-artifact@v2
-        with:
-          name: robot-framework-reports
-          path: |
-            /home/runner/work/RF-Automation-Test/RF-Automation-Test/output.xml
-            /home/runner/work/RF-Automation-Test/RF-Automation-Test/log.html
-            /home/runner/work/RF-Automation-Test/RF-Automation-Test/report.html
-
-      - name: Send Email with Attachments
+      - name: Send Email
         uses: licenseware/send-email-notification@v1
         with:
           api-key: ${{ secrets.SENDGRID_API_KEY }}
@@ -47,6 +38,5 @@ jobs:
           from-email: nicolas@allrideapp.com
           to-email: nico2795@gmail.com
           markdown-body: |
-            Hey, check out this file
-          attachments: /home/runner/work/RF-Automation-Test/RF-Automation-Test/log.html
-          attachments-disposition: attachment
+            This is a test email sent from GitHub Actions.
+            No attachments included.
