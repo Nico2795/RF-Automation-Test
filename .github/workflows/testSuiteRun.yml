@@ -28,7 +28,7 @@ jobs:
 
       - name: Run Robot Framework tests
         run: |
-          robot Admin/Test\ Cases/Scheduled\ Flow/createScheduled.robot
+          robot Admin/Test\ Cases
 
       - name: Commit Log File
         run: |
