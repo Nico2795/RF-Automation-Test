@@ -37,5 +37,5 @@ jobs:
           git config --global user.name Nico2795
           git add log.html
           git commit -m "Add log file"
-          git push origin main  # Agrega este paso para hacer el push al repositorio remoto
+          git push origin main
         working-directory: ${{ github.workspace }}
