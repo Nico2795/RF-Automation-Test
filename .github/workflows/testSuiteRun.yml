@@ -45,5 +45,5 @@ jobs:
       - name: Move Log File to Reports Folder
         run: |
           mkdir -p Admin/Test\ Cases/Reports
-          mv downloaded-log-file/log.html Admin/Test\ Cases/Reports/
+          mv downloaded-log-file/* Admin/Test\ Cases/Reports/
         working-directory: ${{ github.workspace }}
