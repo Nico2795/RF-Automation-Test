@@ -43,4 +43,7 @@ jobs:
           path: downloaded-log-file
 
       - name: Move Log File to Reports Folder
-        run: mv /home/runner/work/RF-Automation-Test/RF-Automation-Test/downloaded-log-file Admin/Test\ Cases/Reports/
+        run: |
+          mkdir -p Admin/Test\ Cases/Reports
+          mv downloaded-log-file/log.html Admin/Test\ Cases/Reports/
+        working-directory: ${{ github.workspace }}
