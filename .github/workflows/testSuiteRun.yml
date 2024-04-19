@@ -43,4 +43,4 @@ jobs:
           path: downloaded-log-file
 
       - name: Move Log File to Reports Folder
-        run: mv downloaded-log-file/* /home/runner/work/RF-Automation-Test/RF-Automation-Test/Admin/Test\ Cases/Reports/
+        run: mv /home/runner/work/RF-Automation-Test/RF-Automation-Test/downloaded-log-file Admin/Test\ Cases/Reports/
