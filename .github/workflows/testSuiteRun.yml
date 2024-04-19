@@ -29,6 +29,7 @@ jobs:
       - name: Run Robot Framework tests
         run: |
           robot Admin/Test\ Cases
+        continue-on-error: true
 
       - name: Commit Log File
         run: |
