@@ -43,3 +43,5 @@ jobs:
         run: |
           cd /home/runner/work/RF-Automation-Test/RF-Automation-Test
           git push https://github.com/Nico2795/RF-Automation-Test.git HEAD:main
+        env:
+          MY_ACCESS_TOKEN: ${{ secrets.TOKEN_GITHUB }}
