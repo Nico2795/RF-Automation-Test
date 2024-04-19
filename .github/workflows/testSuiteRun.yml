@@ -37,11 +37,5 @@ jobs:
           git config --global user.name Nico2795
           git add log.html
           git commit -m "Add log file"
+          git push origin main  # Agrega este paso para hacer el push al repositorio remoto
         working-directory: ${{ github.workspace }}
-
-      - name: Push Changes
-        run: |
-          cd /home/runner/work/RF-Automation-Test/RF-Automation-Test
-          git push https://github.com/Nico2795/RF-Automation-Test.git HEAD:main
-        env:
-          MY_ACCESS_TOKEN: ${{ secrets.TOKEN_ALLACTIONS }}
