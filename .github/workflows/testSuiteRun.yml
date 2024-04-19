@@ -30,20 +30,18 @@ jobs:
         run: |
           robot Admin/Test\ Cases/Scheduled\ Flow/createScheduled.robot
 
-      - name: Upload Log File Artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: log-file
-          path: /home/runner/work/RF-Automation-Test/RF-Automation-Test/log.html
-
-      - name: Download Log File Artifact
-        uses: actions/download-artifact@v2
-        with:
-          name: log-file
-          path: downloaded-log-file
-
-      - name: Move Log File to Reports Folder
+      - name: Commit Log File
         run: |
-          mkdir -p Admin/Test\ Cases/Reports
-          mv downloaded-log-file/* Admin/Test\ Cases/Reports/
+          cd /home/runner/work/RF-Automation-Test/RF-Automation-Test
+          git config --global user.email nico2795@gmail.com
+          git config --global user.name Nico2795
+          git add log.html
+          git commit -m "Add log file"
         working-directory: ${{ github.workspace }}
+
+      - name: Push Changes
+        run: |
+          cd /home/runner/work/RF-Automation-Test/RF-Automation-Test
+          git push https://github.com/Nico2795/RF-Automation-Test.git HEAD:main
+        env:
+          MY_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
